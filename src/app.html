@@ -3,6 +3,91 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<style>
+					*,
+					*::before,
+					*::after {
+						box-sizing: border-box;
+					}
+					:root {
+						--background: #eee;
+						--background-alt: #e2e2e2;
+						--text: #111;
+						--outline: #777;
+						--theme: hsl(0, 90%, 60%);
+
+						--button-shadow-height: 0.4em;
+
+						--button-text: #111;
+						--button-background: hsl(0, 0%, 90%);
+						--button-shadow-color: hsl(0, 0%, 85%);
+
+						--button-primary-text: #eee;
+						--button-primary-background: hsl(0, 0%, 15%);
+						--button-primary-shadow-color: hsl(0, 0%, 5%);
+					}
+					@media (prefers-color-scheme: dark) {
+						:root {
+							--background: #111;
+							--background-alt: #1d1d1d;
+							--text: #eee;
+							--outline: #444;
+
+							--button-text: #eee;
+							--button-background: #111;
+							--button-shadow-color: #000;
+
+							--button-primary-text: #111;
+							--button-primary-background: #e2e2e2;
+							--button-primary-shadow-colo:: #ddd;
+						}
+					}
+					::selection {
+						background-color: var(--theme);
+						color: var(--text);
+					}
+					html,
+					body {
+						height: 100%;
+						margin: 0;
+						font-family: system-ui, sans-serif;
+						color: var(--text);
+						background-color: var(--background);
+					}
+					.button {
+					--shadow-color: var(--button-shadow-color);
+					--shadow-height: var(--button-shadow-height);
+					border-radius: 0.5em;
+					border: none;
+					outline: 0.2em solid transparent;
+					outline-offset: 0.2em;
+					cursor: pointer;
+					padding: 0.7em;
+					padding-inline: 1.2em;
+					text-decoration: none;
+					font-size: 1.1em;
+					transition: scale 50ms ease-out, outline 100ms ease;
+					color: var(--button-text);
+					background-color: var(--button-background);
+					box-shadow: 0 var(--shadow-height) 0 var(--shadow-color);
+					}
+					.button.button-primary {
+						--shadow-color: var(--button-primary-shadow-color);
+						color: var(--button-primary-text);
+						background-color: var(--button-primary-background);
+					}
+					.button:hover {
+						scale: 1.02;
+					}
+					.button:focus-visible {
+						scale: 1.2;
+						outline-color: var(--theme);
+					}
+					.button:active {
+						box-shadow: none;
+						transform: translateY(var(--button-shadow-height));
+					}
+		</style>
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
