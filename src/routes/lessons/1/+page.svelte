@@ -39,11 +39,10 @@
 		margin-block: 3em;
 	}
 	.codeline.highlighted {
-		border-left: 0.5ch solid var(--text);
-		background-color: var(--background-alt);
+		color: var(--background);
+		background-color: var(--text);
 	}
 	.codeline {
-		border-left: 0.5ch solid var(--background);
-		display: inline-block;
+		padding-block: 0.2em;
 	}
 </style>
